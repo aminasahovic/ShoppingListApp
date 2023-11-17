@@ -14,7 +14,7 @@ import {MatCardModule} from '@angular/material/card';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // MatCardModule
+    MatCardModule
     
   ],
   providers: [],
