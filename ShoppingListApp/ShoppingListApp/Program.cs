@@ -21,6 +21,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddTransient(typeof(IItemService), typeof(ItemService));
 builder.Services.AddTransient(typeof(IDataService), typeof(DataService));
 builder.Services.AddTransient(typeof(IShopperService), typeof(ShopperService));
+builder.Services.AddTransient(typeof(IShoppingListsService), typeof(ShoppingListsService));
 
 
 
@@ -33,6 +34,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseCors(
+               options => options
+               .SetIsOriginAllowed(x => _ = true)
+               .AllowAnyMethod()
+               .AllowAnyHeader()
+               .AllowCredentials()
+           ); 
 
 app.UseHttpsRedirection();
 

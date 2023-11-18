@@ -23,5 +23,10 @@ namespace ShoppingListApp.Controllers
         {
             return Ok(service.GetItem());
         }
+        [HttpGet("{shopperId}")]
+        public IActionResult GetByShopper(int shopperId)
+        {
+            return Ok(service.GetByShopper(shopperId));
+        }
     }
 }
