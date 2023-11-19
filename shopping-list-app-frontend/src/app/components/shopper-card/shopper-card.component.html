@@ -4,10 +4,11 @@
             <p class="shopper-name">{{shopper.firstName}} {{shopper.lastName}}   </p>
         </div>
         <div class="command-bar">
-            <button class="btn" mat-button color="basic">View</button>
+            <button class="btn" mat-button color="basic" (click)="viewList()">View</button>
             <button class="btn" mat-button color="basic" (click)="openDialog()">Add</button>
         </div>
     </mat-card-content>
 </mat-card>
 
 <app-shopping-list-dialog [showPopup]="showPopup" [shopper]="shopper" (closePopup)="closePopup()"></app-shopping-list-dialog>
+<app-shopping-items-view [showView]="showList" [shopper]="shopper" (closeView)="closeList()"></app-shopping-items-view>

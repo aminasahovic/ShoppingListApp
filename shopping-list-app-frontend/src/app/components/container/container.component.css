@@ -1,8 +1,16 @@
-#main{
+#main {
     padding-left: 12rem;
     padding-right: 12rem;
     padding-top: 5rem;
 }
-.card-container{
+
+.card-container {
     margin-bottom: 2rem;
+}
+.empty-list p {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+    padding: 10px 0;
+    color: #6ea152;
 }

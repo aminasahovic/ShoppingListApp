@@ -16,9 +16,23 @@ namespace ShoppingListApp.Controllers
         }
 
         [HttpPost]
-        public void AddList(int shopperId, List<Item> itemsId)
+        public IActionResult AddList(int shopperId, List<Item> itemsId)
         {
-            service.AddItems(shopperId, itemsId);
+            return Ok(service.AddItems(shopperId, itemsId));
+
         }
+
+        [HttpGet("{shopperId}")]
+        public List<ShoppingLists> GetListByShopperr(int shopperId)
+        {
+            return service.GetItemsByShopper(shopperId);
+        }
+
+        [HttpDelete("{listId}")]
+        public IActionResult DeleteListItem(int listId)
+        {
+            return Ok(service.DeleteListItem(listId));
+        }
+
     }
 }

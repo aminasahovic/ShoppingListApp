@@ -8,20 +8,23 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class ShopperCardComponent implements OnInit {
   @Input() shopper: any;
   dialog: any;
-  @Input() showPopup: boolean= false;
-
+  @Input() showPopup: boolean = false;
+  @Input() showList: boolean = false;
 
   constructor() {}
 
-  ngOnInit(): void {
-  }
-  
+  ngOnInit(): void {}
+
   closePopup() {
     this.showPopup = false;
   }
-
   openDialog() {
     this.showPopup = true;
   }
-  
+  viewList() {
+    this.showList = true;
+  }
+  closeList() {
+    this.showList = false;
+  }
 }

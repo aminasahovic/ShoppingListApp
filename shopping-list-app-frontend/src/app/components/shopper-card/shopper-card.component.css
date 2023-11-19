@@ -1,6 +1,6 @@
 .custom-card {
-    background-color: #916040;   
-    color: white;
+    background-color:#dfe0d6;   
+    color: #252526;
 }
 .content{
     display: flex;
@@ -12,7 +12,7 @@
     align-items: center; 
 }
 .btn{
-    background-color: #4d654d;
+    background-color: #6ea152;
     color: whitesmoke;
     margin-left: 2rem;
     width: 7rem;
