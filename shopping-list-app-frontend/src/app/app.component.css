@@ -1,0 +1,6 @@
+.navbar {
+    background-color: #800080; /* Boja pozadine */
+    color: #fff; /* Boja teksta */
+    padding: 10px; /* Dodatni prostor oko teksta */
+    text-align: center; /* Centriranje teksta */
+}

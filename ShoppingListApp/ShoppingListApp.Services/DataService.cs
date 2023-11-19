@@ -27,11 +27,11 @@ namespace ShoppingListApp.Services
             var Item=new List<Item>();
 
 
-            Shopper.Add(new Shopper { FirstName = "Belmin", LastName = "Kadic", });
-            Shopper.Add(new Shopper { FirstName = "Amina", LastName = "Sahovic", });
-            Shopper.Add(new Shopper { FirstName = "Husein", LastName = "Maric", });
-            Shopper.Add(new Shopper { FirstName = "Lejla", LastName = "Gosto", });
-            Shopper.Add(new Shopper { FirstName = "Nejra", LastName = "Sadzak", });
+            Shopper.Add(new Shopper { FirstName = "Emily", LastName = "Smith", });
+            Shopper.Add(new Shopper { FirstName = "Michael", LastName = "Johnson", });
+            Shopper.Add(new Shopper { FirstName = "Sarah", LastName = "Williams", });
+            Shopper.Add(new Shopper { FirstName = "Christopher", LastName = "Brown", });
+            Shopper.Add(new Shopper { FirstName = "Olivia", LastName = "Jones", });
 
             Item.Add(new Item { Name = "Laptop" });
             Item.Add(new Item { Name = "Keyboard" });

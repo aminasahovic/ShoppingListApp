@@ -38,6 +38,12 @@ export class ShoppingListDialogComponent implements OnInit {
     }
   }
   Save() {
+    if(this.checkedItem===null){
+      alert("You haven't marked the items.")
+    }
+    else{
+
+    
     this.http
       .post<any>(
         'https://localhost:7073/ShoppingLists?shopperId=' +
@@ -54,6 +60,7 @@ export class ShoppingListDialogComponent implements OnInit {
           console.error('Error occurred:', error);
         }
       );
+    }
   }
 
   isParameterOk(item: any) {

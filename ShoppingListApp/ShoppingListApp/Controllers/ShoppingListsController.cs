@@ -31,7 +31,10 @@ namespace ShoppingListApp.Controllers
         [HttpDelete("{listId}")]
         public IActionResult DeleteListItem(int listId)
         {
-            return Ok(service.DeleteListItem(listId));
+            if(service.DeleteListItem(listId)==true)
+             return Ok(service.DeleteListItem(listId));
+            else
+                return BadRequest();
         }
 
     }

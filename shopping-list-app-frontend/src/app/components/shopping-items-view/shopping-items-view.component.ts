@@ -13,6 +13,7 @@ export class ShoppingItemsViewComponent {
   @Input() showView: boolean = false;
   @Input() shopper: any;
   @Output() closeView = new EventEmitter();
+
   items: any[] = [];
 
   constructor(private http: HttpClient) {}
@@ -35,19 +36,25 @@ export class ShoppingItemsViewComponent {
   }
 
   Delete(item: any) {
-    this.http
-      .delete<any[]>(
-        'https://localhost:7073/ShoppingLists/' + item.shoppingListsId
-      )
-      .subscribe(
-        () => {
-          console.log('Sadržaj je uspješno obrisan');
-          this.loadData();
-          location.reload();
-        },
-        (error) => {
-          console.error('Greška prilikom brisanja:', error);
-        }
-      );
+    const result = confirm(
+      'Are you sure you want to delete the item from the list?'
+    );
+
+    if (result) {
+      this.http
+        .delete<any[]>(
+          'https://localhost:7073/ShoppingLists/' + item.shoppingListsId
+        )
+        .subscribe(
+          () => {
+            console.log('Sadržaj je uspješno obrisan');
+            this.loadData();
+            location.reload();
+          },
+          (error) => {
+            console.error('Greška prilikom brisanja:', error);
+          }
+        );
+    }
   }
 }

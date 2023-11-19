@@ -51,14 +51,14 @@ namespace ShoppingListApp.Services
         public bool DeleteListItem(int listId)
         {
 
-            if (listId == 0)
+            if (listId <= 0)
             {
                 return false;
             }
             var list = context.ShoppingLists.Include(x => x.Item).Include(x => x.Shopper).FirstOrDefault(x => x.ShoppingListsId == listId);
             if (list == null)
             {
-
+                return false;
             }
             if (list.Item != null)
             {

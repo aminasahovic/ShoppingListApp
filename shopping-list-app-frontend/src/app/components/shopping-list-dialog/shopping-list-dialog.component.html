@@ -1,20 +1,27 @@
-<div class="popup" *ngIf="showPopup">
-    <div class="popup-header">
-        <h2>Create List for {{shopper.firstName}} {{shopper.lastName}}</h2>
-        <div (click)="onClosePopup()">X</div>
-    </div>
-    <div class="container-item">
-        <div class="empty-list" *ngIf="items && items.length==0">
-            <p>Currently, there are no items for you! </p>
+<div class="popup-container" *ngIf="showPopup">
+    <div class="overlay"></div>
+
+    <div class="popup">
+
+        <div class="popup-header">
+            <h2>Create List for {{shopper.firstName}} {{shopper.lastName}}</h2>
+            <div (click)="onClosePopup()">X</div>
         </div>
-        <div class="items" *ngFor="let item of items">
-            <div class="item">
-                <div class="item-card">
-                    <h3 class="item-name">{{item.name}}</h3>
-                    <mat-checkbox class="example-margin"  [disabled]="isParameterOk(item)"  (change)="onCheckboxChange($event.checked, item)">Add</mat-checkbox>
+        <div class="container-item">
+            <div class="empty-list" *ngIf="items && items.length==0">
+                <p>Currently, there are no items for you! </p>
+            </div>
+            <div class="items" *ngFor="let item of items">
+                <div class="item">
+                    <div class="item-card">
+                        <h3 class="item-name">{{item.name}}</h3>
+                        <mat-checkbox class="example-margin" [disabled]="isParameterOk(item)"
+                            (change)="onCheckboxChange($event.checked, item)">Add</mat-checkbox>
+                    </div>
                 </div>
             </div>
+            <button class="btn" mat-button (click)="Save()" [disabled]="checkedItem.length === 0">Add items to
+                list</button>
         </div>
-        <button class="btn" mat-button (click)="Save()">Add items to list</button>
     </div>
 </div>

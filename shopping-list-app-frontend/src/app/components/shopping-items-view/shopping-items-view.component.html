@@ -1,20 +1,23 @@
-<div class="popup" *ngIf="showView">
-    <div class="popup-header">
-        <h2>Items List for {{shopper.firstName}} {{shopper.lastName}}</h2>
-        <div (click)="onCloseView()">X</div>
-    </div>
-    <div class="container-item">
-        <div class="empty-list" *ngIf="items && items.length==0">
-            <p>The list is still empty! :(</p>
+<div class="popup-container" *ngIf="showView">
+    <div class="overlay"></div>
+    <div class="popup">
+        <div class="popup-header">
+            <h2>Items List for {{shopper.firstName}} {{shopper.lastName}}</h2>
+            <div (click)="onCloseView()">X</div>
         </div>
-        <div class="items" *ngFor="let item of items">
-            <div class="item">
-                <div class="item-card">
-                    <h3 class="item-name">{{item.item.name}}</h3>
-                    <button class="btn-delete"  mat-button color="basic" (click)="Delete(item)">Delete Item</button>
+        <div class="container-item">
+            <div class="empty-list" *ngIf="items && items.length==0">
+                <p>The list is still empty! :(</p>
+            </div>
+            <div class="items" *ngFor="let item of items">
+                <div class="item">
+                    <div class="item-card">
+                        <h3 class="item-name">{{item.item.name}}</h3>
+                        <button class="btn-delete" mat-button color="basic" (click)="Delete(item)">Delete Item</button>
+                    </div>
                 </div>
             </div>
-    </div>
 
+        </div>
     </div>
 </div>

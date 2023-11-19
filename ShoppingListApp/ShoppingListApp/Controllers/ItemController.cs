@@ -26,6 +26,8 @@ namespace ShoppingListApp.Controllers
         [HttpGet("{shopperId}")]
         public IActionResult GetByShopper(int shopperId)
         {
+            if(shopperId==0)
+                return BadRequest();
             return Ok(service.GetByShopper(shopperId));
         }
     }
