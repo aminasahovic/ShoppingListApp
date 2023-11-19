@@ -15,11 +15,11 @@ This app enables the creation of shopping lists for items.. Each shopper can cre
 - Start the application using `npm start` or `ng serve`.
 
 ### Backend
-- **Database Setup and Migration:**
-  - Execute: `update-database` in the Package Manager Console.
-
 - **Note on Connection String:**
   - Update the connection string in the appsettings.json file to match your environment within the DbContext (OnConfiguring method).
+ 
+- **Database Setup and Migration:**
+  - Execute: `update-database` in the Package Manager Console.
 
 - **Swagger API Data Generation:**
   - You can generate data for shoppers and items through the Swagger API. The API is named Data.
